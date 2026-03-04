@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 五子棋对战平台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <h1>AI 五子棋对战平台</h1>
+      <p class="subtitle">支持人机对战与 AI 自对弈</p>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <label>
+          对战模式
+          <select id="mode">
+            <option value="human-vs-ai">人类 vs AI</option>
+            <option value="ai-vs-ai">AI vs AI</option>
+          </select>
+        </label>
+
+        <label>
+          先手
+          <select id="first">
+            <option value="black-human">黑棋(人类)</option>
+            <option value="black-ai">黑棋(AI)</option>
+          </select>
+        </label>
+
+        <label>
+          AI 难度
+          <select id="level">
+            <option value="1">简单</option>
+            <option value="2" selected>普通</option>
+            <option value="3">困难</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="new-game">新开一局</button>
+        <button id="undo">悔棋</button>
+        <button id="toggle-ai">暂停 AI 自对弈</button>
+      </div>
+
+      <div class="status">
+        <span id="status-text">准备开始</span>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <canvas id="board" width="620" height="620" aria-label="五子棋棋盘"></canvas>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
